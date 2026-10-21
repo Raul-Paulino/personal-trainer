@@ -1,0 +1,682 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #e9ecef;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* CABEÇALHO */
+.header {
+    background-color: rgba(15, 23, 42, 0.95);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+}
+
+.logo {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.logo-bold {
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo-sub {
+    font-size: 0.75rem;
+    color: #f97316;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+/* MENU */
+.nav-menu {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-link {
+    color: #e2e8f0;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #f97316;
+}
+
+/* DROPDOWN */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #1e293b;
+    min-width: 170px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: #f8fafc;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.85rem;
+    transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #f97316;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ÍCONES DO CABEÇALHO */
+.header-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.header-icons a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: transform 0.2s;
+}
+
+.header-icons a:hover {
+    transform: scale(1.2);
+}
+
+/* HERO SECTION */
+.hero {
+    position: relative;
+    min-height: 85vh;
+    background: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1600') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 75px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+.btn-hero {
+    display: inline-block;
+    background-color: #f97316;
+    color: #ffffff;
+    padding: 14px 32px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.4);
+}
+
+.btn-hero:hover {
+    background-color: #ea580c;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(249, 115, 22, 0.6);
+}
+
+/* DIVISÓRIA SVG (WAVE) */
+.custom-shape-divider-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 70px;
+}
+
+.custom-shape-divider-bottom .shape-fill {
+    fill: #e9ecef;
+}
+
+/* ==========================================
+   ETAPA 2: SEÇÃO DE SERVIÇOS / CARDS
+   ========================================== */
+
+.servicos {
+    padding: 60px 0 90px 0;
+    background-color: #e9ecef;
+}
+
+.titulo-secao {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 50px auto;
+}
+
+.titulo-secao h2 {
+    font-size: 2.2rem;
+    color: #1e293b;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.titulo-secao p {
+    color: #64748b;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* GRID DE CARDS */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+/* CARD INDIVIDUAL */
+.card-servico {
+    position: relative;
+    height: 380px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+}
+
+.card-servico:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* IMAGENS DE FUNDO DOS CARDS */
+.card-1 {
+    background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=600');
+}
+
+.card-2 {
+    background-image: url('https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&q=80&w=600');
+}
+
+.card-3 {
+    background-image: url('https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&q=80&w=600');
+}
+
+.card-4 {
+    background-image: url('https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&q=80&w=600');
+}
+
+/* OVERLAY ESCURO NO CARD */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.1) 60%);
+    z-index: 1;
+}
+
+/* BOTÃO DENTRO DO CARD */
+.card-conteudo {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-card {
+    display: block;
+    width: 100%;
+    background-color: #f97316;
+    color: #ffffff;
+    padding: 12px 15px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-card:hover {
+    background-color: #ea580c;
+    transform: scale(1.03);
+}
+
+/* ==========================================
+   ETAPA 3: SEÇÃO PACOTES & MOTIVACIONAL
+   ========================================== */
+
+.pacotes-secao {
+    position: relative;
+    padding: 100px 0;
+    background: url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&q=80&w=1600') center/cover no-repeat fixed;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+}
+
+.pacotes-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.82);
+}
+
+.pacotes-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+/* LADO ESQUERDO: MOTIVACIONAL */
+.motivacional-box {
+    flex: 1;
+    min-width: 300px;
+    color: #ffffff;
+}
+
+.aspas-gigantes {
+    font-size: 4rem;
+    color: #ffffff;
+    line-height: 0;
+    display: block;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.motivacional-box h2 {
+    font-size: 2.5rem;
+    color: #f97316;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.motivacional-box p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #e2e8f0;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.btn-whatsapp {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #0f172a;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+    background-color: #f97316;
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* LADO DIREITO: CARD DE PACOTE */
+.card-pacote-wrapper {
+    position: relative;
+    flex: 1;
+    min-width: 320px;
+    max-width: 460px;
+}
+
+.card-pacote {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 35px 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    color: #1e293b;
+}
+
+.pacote-header h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.pacote-sub {
+    font-size: 0.85rem;
+    color: #64748b;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.pacote-preco {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.pacote-preco .valor {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.pacote-preco .periodo {
+    background-color: #0f172a;
+    color: #ffffff;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.pacote-desc {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 15px;
+}
+
+.pacote-beneficios {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.pacote-beneficios li {
+    font-size: 0.88rem;
+    color: #475569;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pacote-beneficios .check {
+    color: #22c55e;
+    font-weight: bold;
+}
+
+.btn-assinar {
+    display: block;
+    width: 100%;
+    background-color: #1e293b;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.btn-assinar:hover {
+    background-color: #f97316;
+}
+
+/* SETAS DO CARROSSEL DE PLANOS */
+.nav-seta {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(30, 41, 59, 0.9);
+    color: #ffffff;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.nav-seta:hover {
+    background-color: #f97316;
+}
+
+.seta-esquerda {
+    left: -18px;
+}
+
+.seta-direita {
+    right: -18px;
+}
+
+/* ==========================================
+   ETAPA 4: SEÇÃO DICAS ESPECIALS & FOOTER
+   ========================================== */
+
+.dicas-secao {
+    padding: 90px 0;
+    background-color: #e9ecef;
+}
+
+/* GRID DAS DICAS */
+.grid-dicas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card-dica {
+    background-color: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-dica:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.dica-img-box {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.dica-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card-dica:hover .dica-img-box img {
+    transform: scale(1.08);
+}
+
+.tag-categoria {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background-color: #f97316;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.dica-conteudo {
+    padding: 22px;
+}
+
+.dica-conteudo h3 {
+    font-size: 1.15rem;
+    color: #0f172a;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.dica-conteudo p {
+    font-size: 0.88rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.link-ler-mais {
+    color: #f97316;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+}
+
+.link-ler-mais:hover {
+    color: #ea580c;
+}
+
+/* RODAPÉ (FOOTER) */
+.footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    padding-top: 60px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #1e293b;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 220px;
+}
+
+.footer-logo {
+    margin-bottom: 15px;
+}
+
+.footer-col p {
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+.footer-col h4 {
+    color: #ffffff;
+    font-size: 1.05rem;
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.88rem;
+    transition: color 0.2s;
+}
+
+.footer-col ul li a:hover {
+    color: #f97316;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+    color: #64748b;
+}
