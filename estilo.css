@@ -680,3 +680,98 @@ body {
     font-size: 0.8rem;
     color: #64748b;
 }
+
+/* ==========================================
+   RESPONSIVIDADE PARA CELULAR E TABLETS
+   ========================================== */
+
+/* Botão Hambúrguer fica oculto em telas grandes */
+.menu-mobile-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001; /* Garante que o botão fique acima do menu ao clicar */
+}
+
+/* Regras para telas menores que 768px (Celulares) */
+@media (max-width: 768px) {
+    .menu-mobile-btn {
+        display: block; /* Mostra o botão hambúrguer no mobile */
+    }
+
+    .header-icons {
+        display: none; /* Esconde ícones rápidos no mobile */
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        left: -100%; /* Inicia totalmente escondido fora da tela */
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(15, 23, 42, 0.98);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        transition: left 0.4s ease;
+        z-index: 999;
+    }
+
+    /* Classe ativada pelo JS ao clicar */
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-link {
+        font-size: 1.3rem;
+    }
+
+    /* Ajuste do Dropdown no celular */
+    .dropdown {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background-color: transparent;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .dropdown-content a {
+        color: #cbd5e1;
+        padding: 8px 0;
+        font-size: 1.1rem;
+    }
+
+    /* Ajustes das seções para tela pequena */
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+    }
+
+    .titulo-secao h2 {
+        font-size: 1.6rem;
+    }
+
+    .pacotes-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .card-pacote-wrapper {
+        width: 100%;
+    }
+}
